@@ -22,7 +22,7 @@ mongo.connect('mongodb://127.0.0.1/chat',function(err,db){
 	});
 	
 	
-	col.find().limit(10).sort({_id:-1}).toArray(function(err,res){
+	col.find().limit(10).sort({_id:1}).toArray(function(err,res){
 		if(err) throw err;
 		console.log(res);
 		socket.emit('output',res);
