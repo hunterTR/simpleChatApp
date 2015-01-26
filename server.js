@@ -12,9 +12,7 @@ mongo.connect('mongodb://127.0.0.1/chat',function(err,db){
 	socket.on('input',function(data){
 		var name = data.name;
 		var message = data.message;
-		console.log("Name: " + name);
-		console.log("Message: " + message);
-		
+		console.log(data);
 		
 	col.insert({name:name,message:message},function(){
 		console.log('inserted');
